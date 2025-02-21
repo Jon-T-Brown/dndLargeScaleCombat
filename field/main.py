@@ -46,7 +46,7 @@ def resolve():
             army1.pop(i)
     for i in range(len(army2)-1,-1,-1):
         if (army2[i].get_hp() <= 0):
-            army2.pop(i)    
+            army2.pop(i)  
             
 def player_kills(kills):
     for i in range(min(kills,len(army2))-1,-1,-1):
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         army1 = manager.list()
         army2 = manager.list()
         attacks = manager.list()
-        os.chdir("c:\\Git Projects\\dndCombat\\field")
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
         get_army1(manager)
         get_army2(manager)
 
@@ -70,11 +70,14 @@ if __name__ == '__main__':
             player_kills(int(input("Input player kill total, then hit enter: ")))
             print("This may take a moment")
             resolve()
+            if (len(army1) <= 0 or len(army2) <= 0):
+                continue
             attacks = []
             get_attacks(attacks)
             with mp.Pool() as pool:
                 pool.map(attack, attacks)
             resolve()
-            
+        
+        print("War complete")
         print("Army 1: ",len(army1))
         print("Army 2: ",len(army2),"\n")
