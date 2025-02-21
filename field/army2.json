@@ -1,0 +1,29 @@
+[
+    {
+        "type": "soldier",
+        "count": 500,
+        "ac" : 18,
+        "hp" : 27,
+        "hit_bonus": 4,
+        "dmg_bonus": 2,
+        "dmg_dice": 8
+    },
+    {
+        "type": "brute",
+        "count": 100,
+        "ac" : 12,
+        "hp" : 80,
+        "hit_bonus": 1,
+        "dmg_bonus": 5,
+        "dmg_dice": 12
+    },
+    {
+        "type": "archer",
+        "count": 300,
+        "ac" : 20,
+        "hp" : 15,
+        "hit_bonus": 2,
+        "dmg_bonus": 3,
+        "dmg_dice": 12
+    }
+]
