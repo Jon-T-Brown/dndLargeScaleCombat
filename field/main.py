@@ -14,6 +14,7 @@ def get_army1(manager):
         for item in battalions:
             for i in range(0, item["count"]):
                 army1.append(manager.Unit(item["ac"], item["hp"], item["hit_bonus"], item["dmg_bonus"], item["dmg_dice"]))
+    shuffle(army1)
                 
 def get_army2(manager):
     with open("army2.json", "r") as f:
@@ -21,6 +22,7 @@ def get_army2(manager):
         for item in battalions:
             for i in range(0, item["count"]):
                 army2.append(manager.Unit(item["ac"], item["hp"], item["hit_bonus"], item["dmg_bonus"], item["dmg_dice"]))
+    shuffle(army2)
                 
 def get_attacks(attacks):
     army1len = len(army1)-1
